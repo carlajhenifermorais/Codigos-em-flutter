@@ -3,9 +3,17 @@ class Conta{
   
   void depositar(double valor){
     _saldo += valor;
-  } //método para alterar
+  } //método pra alterar
+  
+  void mostrarSaldo(){
+    print(_saldo);
+  }
 }
 
 void main(){
+  Conta c1 = Conta();
   
+  c1.depositar(100);
+  
+  c1.mostrarSaldo();
 }
