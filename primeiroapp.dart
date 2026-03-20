@@ -17,9 +17,9 @@ void main(){
           child: Text(
             'Olá, Flutter!',
             style: TextStyle(fontSize:32), //estilizar tamanho da fonte
+          ),
         ),
       ),
-     ),
-   );
+    );
   }
  }
