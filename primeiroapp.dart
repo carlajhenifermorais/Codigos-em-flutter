@@ -5,7 +5,7 @@ void main(){
     MaterialApp());
 }
       
- class Myapp extends StatelessWidget{ //página estatica
+ class MyApp extends StatelessWidget{ //página estatica
    @override
    Widget build(BuildContext context){ //constroi e retorna interface
      return MaterialApp(
@@ -22,4 +22,4 @@ void main(){
      ),
    );
   }
-}
+ }
