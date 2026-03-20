@@ -4,7 +4,7 @@ void main(){
   runApp(
     MaterialApp(
       home: Center( //para centralizar
-        child: Text('Olá, Flutter!'), //filho do componente visual
+        child: Text('Olá, Flutter!'), //filho do componente visual ou elemento dentro
       ),
     ),
   );
