@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main(){
   runApp(
-    MaterialApp());
+    MyApp());
 }
       
  class MyApp extends StatelessWidget{ //página estatica
@@ -13,6 +13,7 @@ void main(){
         appBar: AppBar( //barra superior
           title: Text('Meu app'), //titulo pra barra superior
         ),
+        backgroundColor: Colors.pink[100], //mudar fundo
         body: Center(
           child: Text(
             'Olá, Flutter!',
