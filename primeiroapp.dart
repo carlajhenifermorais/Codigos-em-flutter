@@ -16,7 +16,7 @@ void main(){
         backgroundColor: Colors.pink[100], //mudar fundo
         body: Center(
           child: Text(
-            'Olá, Flutter!',
+            'Oiê Giovanni!!!!',
             style: TextStyle(fontSize:32), //estilizar tamanho da fonte
           ),
         ),
