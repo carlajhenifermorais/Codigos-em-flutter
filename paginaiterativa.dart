@@ -24,14 +24,30 @@ class MinhaTela extends StatefulWidget{
 
 //estado da tela
 class _MinhaTelaState extends State<MinhaTela> {
-  String mensagem = 'Sejam todos muito bem-vindos!';
+  String mensagem = 'Interaja com a tela!';
   
-  void alterarMensagem(){
-    mensagem = 'Você clicou na tela!';
+  void umToque(){
+    mensagem = 'Toque simples!';
   }
   
-  void alterarTela(){
-    setState(alterarMensagem);
+  void doisToques(){
+    mensagem = 'Duplo toque!!';
+  }
+  
+  void toqueLongo(){
+    mensagem = 'Toque longo!!!!!!';
+  }
+  
+  void alterarUm(){
+    setState(umToque);
+  }
+  
+  void alterarDois(){
+    setState(doisToques);
+  }
+  
+  void alterarTres(){
+    setState(toqueLongo);
   }
   
   @override
@@ -43,13 +59,14 @@ class _MinhaTelaState extends State<MinhaTela> {
       backgroundColor: Colors.pink[50],
       body: Center(
         child: GestureDetector(
-          onTap: alterarTela,
+          onTap: alterarUm,
+          onDoubleTap: alterarDois,
+          onLongPress: alterarTres,
           child: Text(
             mensagem,
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: 44),
           ),
         ),
       ),
     );
   }
-}
