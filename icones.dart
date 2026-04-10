@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Row(
             children: [
-                Icon(Icons.star, size: 30, color: Colors.yellow),
+                Icon(Icons.star, size: 60, color: Colors.yellow),
               Text(
                 'Olá INFO!',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 40),
               ),
-              Icon(Icons.favorite, size: 30, color: Colors.red),
+              Icon(Icons.favorite, size: 60, color: Colors.red),
             ],
           ),
         ),
@@ -29,3 +29,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// Link com icones: https://api.flutter.dev/flutter/material/Icons-class.html
+// Exemplo: Icon(Icons.alarm, size: 60, color: Colors.yellow),
