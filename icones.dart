@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
         ),
         backgroundColor: Colors.green[500],
         body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column( //ou row pra organizar em linha
+            mainAxisAlignment: MainAxisAlignment.center,//posiciona o bloco centralizado
             children: [
-                Icon(Icons.star, size: 60, color: Colors.yellow),
+              Icon(Icons.star, size: 60, color: Colors.yellow),
               Text(
                 'Olá INFO!',
                 style: TextStyle(fontSize: 40),
