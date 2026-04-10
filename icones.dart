@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.green[500],
         body: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
                 Icon(Icons.star, size: 60, color: Colors.yellow),
               Text(
