@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(20),
             margin: EdgeInsets.all(10),
-            color: Colors.blue,
+            color: Colors.yellow,
             child: Text(
               'Ola INFO!',
-              style: TextStyle(fontSize: 40, color: Colors.white),
+              style: TextStyle(fontSize: 40, color: Colors.indigo[800]),
             ),
           ),
         ),
