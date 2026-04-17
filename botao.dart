@@ -27,6 +27,7 @@ class _TelaContadorState extends State<TelaContador> {
     return Scaffold(
       appBar: AppBar(
         title: Text("App contador"),
+        backgroundColor: Colors.pink[100],
       ),
       body: Center(
         child: Column(
