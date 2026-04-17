@@ -32,7 +32,14 @@ class _TelaContadorState extends State<TelaContador> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Valor: $valor"),
+            Text("Valor: $valor",
+                style: TextStyle(fontSize:40)
+            ),
+            
+            SizedBox(
+                width: 20,
+                height: 40,
+            ),
             
             ElevatedButton(
               onPressed: () {
@@ -40,12 +47,15 @@ class _TelaContadorState extends State<TelaContador> {
                   valor = valor + 1;
                 }); 
               },
-              child: Text("Somar"),
+              child: Text(
+                "Somar",
+                style: TextStyle(fontSize:32)
+              ),
             ),
             
             SizedBox(
                 width: 20,
-                height: 10,
+                height: 40,
              ),
             
             ElevatedButton(
@@ -54,12 +64,15 @@ class _TelaContadorState extends State<TelaContador> {
                   valor = valor - 1;
                 }); 
               },
-              child: Text("Subtrair"),
+              child: Text(
+                "Subtrair",
+                style: TextStyle(fontSize:32)
+              ),
             ),
             
             SizedBox(
                 width: 20,
-                height: 10,
+                height: 40,
             ),
             
             ElevatedButton(
@@ -68,7 +81,10 @@ class _TelaContadorState extends State<TelaContador> {
                   valor = 0;
                 }); 
               },
-              child: Text("Zerar"),
+              child: Text(
+                "Zerar",
+                style: TextStyle(fontSize:32)
+              ),
             ),
           ]
         ),
