@@ -36,7 +36,9 @@ class _TelaContadorState extends State<TelaContador> {
             
             ElevatedButton(
               onPressed: () {
-                valor = valor + 1;
+                setState((){
+                  valor = valor + 1;
+                }); 
               },
               child: Text("Somar"),
             ),
