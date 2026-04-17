@@ -42,6 +42,34 @@ class _TelaContadorState extends State<TelaContador> {
               },
               child: Text("Somar"),
             ),
+            
+            SizedBox(
+                width: 20,
+                height: 10,
+             ),
+            
+            ElevatedButton(
+              onPressed: () {
+                setState((){
+                  valor = valor - 1;
+                }); 
+              },
+              child: Text("Subtrair"),
+            ),
+            
+            SizedBox(
+                width: 20,
+                height: 10,
+            ),
+            
+            ElevatedButton(
+              onPressed: () {
+                setState((){
+                  valor = 0;
+                }); 
+              },
+              child: Text("Zerar"),
+            ),
           ]
         ),
       ),
