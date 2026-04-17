@@ -29,7 +29,19 @@ class _TelaContadorState extends State<TelaContador> {
         title: Text("App contador"),
       ),
       body: Center(
-        child: Text("Valor: $valor")
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Valor: $valor"),
+            
+            ElevatedButton(
+              onPressed: () {
+                valor = valor + 1;
+              },
+              child: Text("Somar"),
+            ),
+          ]
+        ),
       ),
     );
   }
