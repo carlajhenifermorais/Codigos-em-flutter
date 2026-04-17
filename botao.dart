@@ -14,7 +14,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TelaContador extends StatelessWidget {
+class TelaContador extends StatefulWidget{
+  @override
+  State<TelaContador> createState() => _TelaContadorState();
+}
+
+class _TelaContadorState extends State<TelaContador> {
+  int valor = 0;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,7 @@ class TelaContador extends StatelessWidget {
         title: Text("App contador"),
       ),
       body: Center(
-        child: Text("Tela principal")
+        child: Text("Valor: $valor")
       ),
     );
   }
