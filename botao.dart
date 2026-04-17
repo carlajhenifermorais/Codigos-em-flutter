@@ -18,6 +18,9 @@ class TelaContador extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("App contador"),
+      ),
       body: Center(
         child: Text("Tela principal")
       ),
