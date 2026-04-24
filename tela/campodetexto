@@ -22,6 +22,9 @@ class TelaEntradaDados extends StatefulWidget{
 }
 
 class _TelaEntradaDadosState extends State<TelaEntradaDados> {
+  final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
+  String _displayText = '';
+  
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -29,7 +32,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
       appBar: AppBar(
         title: Text("App Entrada de Dados"),
         centerTitle: true,
-        backgroundColor: Colors.lime[800],
+        backgroundColor: Colors.blue[800],
         foregroundColor: Colors.white,
       ),
       //corpo
