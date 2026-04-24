@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, //tirar tira de debug
+      home: TelaEntradaDados(),
+    );
+  }
+}
+
+class TelaEntradaDados extends StatefulWidget{
+  TelaEntradaDados();
+  
+  @override
+  State<TelaEntradaDados> createState() => _TelaEntradaDadosState();
+}
+
+class _TelaEntradaDadosState extends State<TelaEntradaDados> {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      //barra
+      appBar: AppBar(
+        title: Text("App Entrada de Dados"),
+        centerTitle: true,
+        backgroundColor: Colors.lime[800],
+        foregroundColor: Colors.white,
+      ),
+      //corpo
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        )
+      ),
+    );
+  }
+}
