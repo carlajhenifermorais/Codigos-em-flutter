@@ -50,7 +50,6 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
             SizedBox(
-                width: 20,
                 height: 40,
             ),
             
@@ -60,7 +59,18 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
                   _displayText = _textController.text;
                 });
               },
-              child: Text('Exibir Texto', style: TextStyle(fontSize:28)),
+              child: Text('Exibir Texto', style: TextStyle(fontSize:28, color: Colors.blue)),
+            ),
+            
+            SizedBox(
+                height: 40,
+            ),
+            
+            Text(
+              '$_displayText',
+              style: TextStyle(fontSize: 28,
+                              fontWeight: FontWeight.bold
+                              ),
             ),
           ],
         )
