@@ -47,6 +47,11 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
                        labelText: 'Digite algo aqui',
                        hintText: 'Ex: Olá Mundo!'
                      ),
+                      onSubmitted: (value){
+                        setState((){
+                          _displayText = _textController.text;
+                        });
+                      }
             ),
             
             SizedBox(
