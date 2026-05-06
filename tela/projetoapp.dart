@@ -22,15 +22,25 @@ class TelaEntradaDados extends StatefulWidget{
 }
 
 class _TelaEntradaDadosState extends State<TelaEntradaDados> {
+  String _resultado = '';
   final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
-  String _displayText = ''; //texto dinamico
+  if(_displayText=="Festa" or "festa"){
+   String _resultado = 'Batom vermelho + sombra preta';  
+  }if(_displayText=="Trabalho" or "trabalho"){
+    String _resultado = 'Batom nude + sombra marrom';
+  }if(_displayText=="Escola" or "escola"){
+    String _resultado = 'Gloss pêssego + máscara de cílios';
+  }else(_displayText=="Dia a dia" or "dia a dia"){
+    String _resultado = 'Gloss transparente + máscara de cílios';
+  }
+  //texto dinamico
   
   @override
   Widget build(BuildContext context){
     return Scaffold(
       //barra
       appBar: AppBar(
-        title: Text("Tint"),
+        title: Text("Tint Makeup"),
         centerTitle: true,
         backgroundColor: Colors.red[100],
         foregroundColor: Colors.pink[500],
@@ -62,7 +72,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
                      decoration: InputDecoration(
                        border: OutlineInputBorder(),
                        labelText: 'Digite aqui a ocasião',
-                       hintText: 'Ex: Festa, Trabalho, Escola, Dia a dia'
+                       hintText: 'Opções: Festa, Trabalho, Escola, Dia a dia'
                      ),
                       onSubmitted: (value){
                         setState((){
@@ -89,7 +99,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
             Text(
-              'Recomendação: $_displayText',
+              'Recomendação: $_resultado',
               style: TextStyle(fontSize: 28,
                               fontWeight: FontWeight.bold
                               ),
