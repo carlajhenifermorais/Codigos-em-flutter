@@ -90,11 +90,17 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
                     _resultado = 'Gloss pêssego + máscara de cílios';
                   } else if (_displayText == "Dia a dia" || _displayText == "dia a dia") {
                     _resultado = 'Gloss transparente + máscara de cílios';
-                  } else{
-                    _resultado = 'Não tem essa opção! Escolha outra';
+                  } else if(_displayText == ""){
+                    _resultado = 'Digite uma ocasião!';
+                  }
+                  else{
+                    _resultado = 'Não tem essa opção, escolha outra!';
                   }
                 });
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[100],
+              ),
               child: Text('Descobrir make', style: TextStyle(fontSize:28, color: Colors.pink[500])),
             ),
             
