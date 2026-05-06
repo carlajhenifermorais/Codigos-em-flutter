@@ -23,16 +23,9 @@ class TelaEntradaDados extends StatefulWidget{
 
 class _TelaEntradaDadosState extends State<TelaEntradaDados> {
   String _resultado = '';
+  String _displayText = '';
   final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
-  if(_displayText=="Festa" or "festa"){
-   String _resultado = 'Batom vermelho + sombra preta';  
-  }if(_displayText=="Trabalho" or "trabalho"){
-    String _resultado = 'Batom nude + sombra marrom';
-  }if(_displayText=="Escola" or "escola"){
-    String _resultado = 'Gloss pêssego + máscara de cílios';
-  }else(_displayText=="Dia a dia" or "dia a dia"){
-    String _resultado = 'Gloss transparente + máscara de cílios';
-  }
+ 
   //texto dinamico
   
   @override
@@ -89,6 +82,17 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
               onPressed: (){
                 setState((){
                   _displayText = _textController.text;
+                  if (_displayText == "Festa" || _displayText == "festa") {
+                    _resultado = 'Batom vermelho + sombra preta';
+                  } else if (_displayText == "Trabalho" || _displayText == "trabalho") {
+                    _resultado = 'Batom nude + sombra marrom';
+                  } else if (_displayText == "Escola" || _displayText == "escola") {
+                    _resultado = 'Gloss pêssego + máscara de cílios';
+                  } else if (_displayText == "Dia a dia" || _displayText == "dia a dia") {
+                    _resultado = 'Gloss transparente + máscara de cílios';
+                  } else{
+                    _resultado = 'Não tem essa opção! Escolha outra';
+                  }
                 });
               },
               child: Text('Descobrir make', style: TextStyle(fontSize:28, color: Colors.pink[500])),
@@ -99,7 +103,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
             Text(
-              'Recomendação: $_resultado',
+              'Recomendação:  $_resultado',
               style: TextStyle(fontSize: 28,
                               fontWeight: FontWeight.bold
                               ),
