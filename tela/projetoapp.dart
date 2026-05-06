@@ -103,9 +103,15 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
             Text(
-              'Recomendação:  $_resultado',
+              'Recomendação:',
               style: TextStyle(fontSize: 28,
                               fontWeight: FontWeight.bold
+                              ),
+            ),
+            
+            Text(
+              '$_resultado',
+              style: TextStyle(fontSize: 28,
                               ),
             ),
           ],
