@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, //tirar tira de debug
+      debugShowCheckedModeBanner: false, 
       home: TelaEntradaDados(),
     );
   }
@@ -26,9 +26,8 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
   String _erro = '';
   String _tutorial = '';
   String _displayText = '';
-  final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
- 
-  //texto dinamico
+  final TextEditingController _textController = TextEditingController(); 
+
   
   @override
   Widget build(BuildContext context){
