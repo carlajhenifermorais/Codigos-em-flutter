@@ -23,6 +23,7 @@ class TelaEntradaDados extends StatefulWidget{
 
 class _TelaEntradaDadosState extends State<TelaEntradaDados> {
   String _resultado = '';
+  String _erro = '';
   String _tutorial = '';
   String _displayText = '';
   final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
@@ -96,10 +97,14 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
                     _resultado = 'Gloss transparente + pele leve + máscara de cílios';
                     _tutorial = 'https://www.youtube.com/results?search_query=make+dia+a+dia+natural+simples';
                   } else if(_displayText == ""){
-                    _resultado = 'Digite uma ocasião!';
+                    _resultado = '';
+                    _tutorial = '';
+                    _erro = 'Digite uma ocasião!';
                   }
                   else{
-                    _resultado = 'Não tem essa opção, escolha outra!';
+                    _resultado = '';
+                    _tutorial = '';
+                    _erro = 'Não tem essa opção, escolha outra!';
                   }
                 });
               },
@@ -110,7 +115,17 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
             SizedBox(
-                height: 40,
+                height: 30,
+            ),
+            
+            Text(
+              '$_erro',
+              style: TextStyle(fontSize: 20,
+                              ),
+            ),
+            
+            SizedBox(
+                height: 30,
             ),
             
             Text(
@@ -127,7 +142,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             ),
             
              SizedBox(
-                height: 40,
+                height: 30,
             ),
             
             Text(
