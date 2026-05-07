@@ -140,7 +140,7 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             Text(
               '$_tutorial',
               style: TextStyle(fontSize: 20,
-                              ),
+                              ),textAlign: TextAlign.center,
             ),
           ],
         )
