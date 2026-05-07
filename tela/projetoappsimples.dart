@@ -23,6 +23,7 @@ class TelaEntradaDados extends StatefulWidget{
 
 class _TelaEntradaDadosState extends State<TelaEntradaDados> {
   String _resultado = '';
+  String _tutorial = '';
   String _displayText = '';
   final TextEditingController _textController = TextEditingController(); //vê o que o usuário está digitando
  
@@ -82,14 +83,18 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
               onPressed: (){
                 setState((){
                   _displayText = _textController.text;
-                  if (_displayText == "Festa" || _displayText == "festa") {
-                    _resultado = 'Batom vermelho + sombra preta';
-                  } else if (_displayText == "Trabalho" || _displayText == "trabalho") {
-                    _resultado = 'Batom nude + sombra marrom';
-                  } else if (_displayText == "Escola" || _displayText == "escola") {
-                    _resultado = 'Gloss pêssego + máscara de cílios';
-                  } else if (_displayText == "Dia a dia" || _displayText == "dia a dia") {
-                    _resultado = 'Gloss transparente + máscara de cílios';
+                  if (_displayText == "Festa" || _displayText == "festa" || _displayText == "FESTA") {
+                    _resultado = 'Batom vermelho + sombra preta esfumada + iluminador';
+                    _tutorial = 'https://www.youtube.com/results?search_query=make+para+festa+olho+preto+batom+vermelho';
+                  } else if (_displayText == "Trabalho" || _displayText == "trabalho" || _displayText == "TRABALHO") {
+                    _resultado = 'Batom nude + sombra marrom leve + máscara de cílios';
+                    _tutorial = 'https://www.youtube.com/results?search_query=make+para+trabalho+natural+nude';
+                  } else if (_displayText == "Escola" || _displayText == "escola" || _displayText == "ESCOLA") {
+                    _resultado = 'Gloss leve + blush rosado + máscara de cílios';
+                    _tutorial = 'https://www.youtube.com/results?search_query=make+leve+para+escola+natural';
+                  } else if (_displayText == "Dia a dia" || _displayText == "dia a dia" || _displayText == "DIA A DIA") {
+                    _resultado = 'Gloss transparente + pele leve + máscara de cílios';
+                    _tutorial = 'https://www.youtube.com/results?search_query=make+dia+a+dia+natural+simples';
                   } else if(_displayText == ""){
                     _resultado = 'Digite uma ocasião!';
                   }
@@ -117,7 +122,24 @@ class _TelaEntradaDadosState extends State<TelaEntradaDados> {
             
             Text(
               '$_resultado',
+              style: TextStyle(fontSize: 20,
+                              ),
+            ),
+            
+             SizedBox(
+                height: 40,
+            ),
+            
+            Text(
+              'Tutorial:',
               style: TextStyle(fontSize: 28,
+                              fontWeight: FontWeight.bold
+                              ),
+            ),
+            
+            Text(
+              '$_tutorial',
+              style: TextStyle(fontSize: 20,
                               ),
             ),
           ],
