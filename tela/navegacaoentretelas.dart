@@ -40,3 +40,36 @@ class PrimeiraTela extends StatelessWidget{
     );
   }
 }
+
+class SegundaTela extends StatelessWidget{
+  SegundaTela();
+  
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Segunda tela'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Você está na segunda tela',
+              style: TextStyle(fontSize: 20),
+            ),
+            
+            SizedBox(height: 20),
+            
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              child: Text('Voltar',)
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
