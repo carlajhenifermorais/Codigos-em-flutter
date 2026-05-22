@@ -90,3 +90,32 @@ class _TelaInicialState extends State<TelaInicial> {
     );
   }
 }
+
+class TelaPersonagens extends StatelessWidget {
+  final String jogador;
+  
+  TelaPersonagens({
+    required this.jogador,
+  });
+  
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Escolha seu personagem'),
+        backgroundColor: Colors.pink[50],
+      ),
+      
+      backgroundColor: Colors.pink[100],
+      
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
