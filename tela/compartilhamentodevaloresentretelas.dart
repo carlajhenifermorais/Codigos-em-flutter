@@ -33,9 +33,9 @@ class _TelaInicialState extends State<TelaInicial> {
     
       appBar: AppBar(
         title: Text('Tela Inicial'),
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Colors.blue[50],
       ),
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.blue[100],
       
       body: Center(
         child: Column(
@@ -103,16 +103,72 @@ class TelaPersonagens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Escolha seu personagem'),
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Colors.blue[50],
       ),
       
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.blue[100],
       
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+            Text(
+              'Olá, $jogador!',
+              style: TextStyle(fontSize: 24),
+            ),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  {
+                    'nome': 'Mago',
+                    'figura': '🧙'
+                  },
+                );
+              },
+              child: Text('🧙 Escolher Mago'),
+            ),
+            SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  {
+                    'nome': 'Guerreiro',
+                    'figura': '⚔️'
+                  },
+                );
+              },
+              child: Text('⚔️ Escolher Guerreiro'),
+            ),
+            SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  {
+                    'nome': 'Arqueiro',
+                    'figura': '🏹'
+                  },
+                );
+              },
+              child: Text('⚔🏹 Escolher Arqueiro'),
+            ),
+            SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(
+                  context,
+                  {
+                    'nome': 'Fada',
+                    'figura': '🧚‍♀️'
+                  },
+                );
+              },
+              child: Text('🧚‍♀️ Escolher Fada'),
+            ),
+            SizedBox(height: 15),
           ],
         ),
       ),
