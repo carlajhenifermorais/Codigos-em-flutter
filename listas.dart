@@ -64,6 +64,18 @@ class RankingFIFA extends StatelessWidget {
                 Icons.emoji_events,
                 color: Colors.amber,
               ),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      '${selecoes[index]['pais']} possui '
+                      '${selecoes[index]['titulos']} '
+                      'título(s) mundial(is).',
+                    ),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              },
             ),
           ); 
         }
