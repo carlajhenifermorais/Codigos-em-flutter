@@ -39,14 +39,34 @@ class RankingFIFA extends StatelessWidget {
         backgroundColor: Colors.green[500],
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.yellow[300],
+      backgroundColor: Colors.yellow[500],
       body: ListView.builder(
         itemCount: selecoes.length,
         itemBuilder: (context, index){
-          return Text(
-            selecoes[index]['pais'],
-          );
-        },
+          return Card(
+            color: Colors.blue[200],
+            margin: EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 10,
+            ),
+            elevation: 3,
+            child: ListTile(
+              leading: Text(
+                selecoes[index]['bandeira'],
+                style: TextStyle(fontSize: 32,),
+              ),
+              title: Text(
+                selecoes[index]['pais'],
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),
+              ),
+              subtitle: Text('Título mundiais: ${selecoes[index]['titulos']}',),
+              trailing: Icon(
+                Icons.emoji_events,
+                color: Colors.amber,
+              ),
+            ),
+          ); 
+        }
       ),
     );
   }
