@@ -32,6 +32,22 @@ class RankingFIFA extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context){
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Copa do mundo FIFA'),
+        centerTitle: true,
+        backgroundColor: Colors.green[500],
+        foregroundColor: Colors.white,
+      ),
+      backgroundColor: Colors.yellow[300],
+      body: ListView.builder(
+        itemCount: selecoes.length,
+        itemBuilder: (context, index){
+          return Text(
+            selecoes[index]['pais'],
+          );
+        },
+      ),
+    );
   }
 }
