@@ -158,6 +158,27 @@ final List<Map<String, dynamic>> selecoes = [
               },
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Text(
+                  'Mínimo de títulos: ${minimoTitulos.toInt()}',
+                ),
+                Slider(
+                  value: minimoTitulos,
+                  min: 0,
+                  max: 5,
+                  divisions: 5,
+                  label: minimoTitulos.toInt().toString(),
+                  onChanged: (valor) {
+                    minimoTitulos = valor;
+                    aplicarFiltros();
+                  },
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: selecoesFiltradas.length,
