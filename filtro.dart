@@ -80,15 +80,26 @@ final List<Map<String, dynamic>> selecoes = [
   @override
   void initState() {
     super.initState();
-    selecoesFiltradas = List.from(selecoes);
+    aplicarFiltros();
   }
 
-  void pesquisar(String texto) {
+  void aplicarFiltros() {
     setState(() {
       selecoesFiltradas = selecoes.where((selecao) {
-        return selecao['pais']
-            .toLowerCase()
-            .contains(texto.toLowerCase());
+        bool atendeNome = selecao['pais']
+          .toLowerCase()
+          .contains(filtroTexto.toLowerCase());
+        
+        bool atendeContinente =
+          continenteSelecionado == 'Todos' ||
+          selecao['continente'] == continenteSelecionado;
+        
+        bool atendeTitulos =
+          selecao['titulos'] >= minimoTitulos;
+        
+        return atendeNome &&
+            atendeContinente &&
+          atendeTitulos;
       }).toList();
     });
   }
@@ -113,7 +124,38 @@ final List<Map<String, dynamic>> selecoes = [
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(),
               ),
-              onChanged: pesquisar,
+              onChanged: (texto){
+                filtroTexto = texto;
+                aplicarFiltros();
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: DropdownButtonFormField<String>(
+              initialValue: continenteSelecionado,
+              decoration: InputDecoration(
+                labelText: 'Continente',
+                border: OutlineInputBorder(),
+              ),
+              items: [
+                'Todos',
+                'África',
+                'América do Norte',
+                'América do Sul',
+                'Ásia',
+                'Europa',
+                'Oceania',
+              ].map((continente){
+                return DropdownMenuItem(
+                  value: continente,
+                  child: Text(continente),
+                );
+              }).toList(),
+              onChanged: (valor) {
+                continenteSelecionado = valor!;
+                aplicarFiltros();
+              },
             ),
           ),
           Expanded(
