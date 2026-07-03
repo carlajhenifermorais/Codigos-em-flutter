@@ -1,0 +1,157 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FIFAExplorer(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class FIFAExplorer extends StatefulWidget {
+  @override
+  State<FIFAExplorer> createState() => _FIFAExplorerState();
+}
+
+class _FIFAExplorerState extends State<FIFAExplorer> {
+final List<Map<String, dynamic>> selecoes = [
+  {'pais': 'Alemanha', 'bandeira': '🇩🇪', 'titulos': 4, 'continente': 'Europa'},
+  {'pais': 'Argélia', 'bandeira': '🇩🇿', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Argentina', 'bandeira': '🇦🇷', 'titulos': 3, 'continente': 'América do Sul'},
+  {'pais': 'Arábia Saudita', 'bandeira': '🇸🇦', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Austrália', 'bandeira': '🇦🇺', 'titulos': 0, 'continente': 'Oceania'},
+  {'pais': 'Áustria', 'bandeira': '🇦🇹', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Bélgica', 'bandeira': '🇧🇪', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Bósnia e Herzegovina', 'bandeira': '🇧🇦', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Brasil', 'bandeira': '🇧🇷', 'titulos': 5, 'continente': 'América do Sul'},
+  {'pais': 'Cabo Verde', 'bandeira': '🇨🇻', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Camarões', 'bandeira': '🇨🇲', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Canadá', 'bandeira': '🇨🇦', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'Catar', 'bandeira': '🇶🇦', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Colômbia', 'bandeira': '🇨🇴', 'titulos': 0, 'continente': 'América do Sul'},
+  {'pais': 'Congo DR', 'bandeira': '🇨🇩', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Coreia do Sul', 'bandeira': '🇰🇷', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Costa do Marfim', 'bandeira': '🇨🇮', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Croácia', 'bandeira': '🇭🇷', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Curaçao', 'bandeira': '🇨🇼', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'Egito', 'bandeira': '🇪🇬', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Equador', 'bandeira': '🇪🇨', 'titulos': 0, 'continente': 'América do Sul'},
+  {'pais': 'Escócia', 'bandeira': '🇬🇧', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Espanha', 'bandeira': '🇪🇸', 'titulos': 1, 'continente': 'Europa'},
+  {'pais': 'Estados Unidos', 'bandeira': '🇺🇸', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'França', 'bandeira': '🇫🇷', 'titulos': 2, 'continente': 'Europa'},
+  {'pais': 'Gana', 'bandeira': '🇬🇭', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Haiti', 'bandeira': '🇭🇹', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'Inglaterra', 'bandeira': '🇬🇧', 'titulos': 1, 'continente': 'Europa'},
+  {'pais': 'Irã', 'bandeira': '🇮🇷', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Iraque', 'bandeira': '🇮🇶', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Japão', 'bandeira': '🇯🇵', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Jordânia', 'bandeira': '🇯🇴', 'titulos': 0, 'continente': 'Ásia'},
+  {'pais': 'Marrocos', 'bandeira': '🇲🇦', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'México', 'bandeira': '🇲🇽', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'Noruega', 'bandeira': '🇳🇴', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Nova Zelândia', 'bandeira': '🇳🇿', 'titulos': 0, 'continente': 'Oceania'},
+  {'pais': 'Países Baixos', 'bandeira': '🇳🇱', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Panamá', 'bandeira': '🇵🇦', 'titulos': 0, 'continente': 'América do Norte'},
+  {'pais': 'Paraguai', 'bandeira': '🇵🇾', 'titulos': 0, 'continente': 'América do Sul'},
+  {'pais': 'Portugal', 'bandeira': '🇵🇹', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'República Tcheca', 'bandeira': '🇨🇿', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Senegal', 'bandeira': '🇸🇳', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Suécia', 'bandeira': '🇸🇪', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Suíça', 'bandeira': '🇨🇭', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Tunísia', 'bandeira': '🇹🇳', 'titulos': 0, 'continente': 'África'},
+  {'pais': 'Turquia', 'bandeira': '🇹🇷', 'titulos': 0, 'continente': 'Europa'},
+  {'pais': 'Uruguai', 'bandeira': '🇺🇾', 'titulos': 2, 'continente': 'América do Sul'},
+  {'pais': 'Uzbequistão', 'bandeira': '🇺🇿', 'titulos': 0, 'continente': 'Ásia'},
+];
+
+  List<Map<String, dynamic>> selecoesFiltradas = [];
+  
+  String filtroTexto = '';
+  String continenteSelecionado = 'Todos';
+  double minimoTitulos = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    selecoesFiltradas = List.from(selecoes);
+  }
+
+  void pesquisar(String texto) {
+    setState(() {
+      selecoesFiltradas = selecoes.where((selecao) {
+        return selecao['pais']
+            .toLowerCase()
+            .contains(texto.toLowerCase());
+      }).toList();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('FIFA Explorer'),
+        centerTitle: true,
+        backgroundColor: Colors.blue[200],
+      ),
+      backgroundColor: Colors.yellow[200],
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Pesquisar seleção',
+                hintText: 'Ex.: Brasil, Argentina ou França',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(),
+              ),
+              onChanged: pesquisar,
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: selecoesFiltradas.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
+                  ),
+                  elevation: 3,
+                  child: ListTile(
+                    leading: Text(
+                      selecoesFiltradas[index]['bandeira'],
+                      style: TextStyle(fontSize: 32),
+                    ),
+                    title: Text(
+                      selecoesFiltradas[index]['pais'],
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'Títulos mundiais: ${selecoesFiltradas[index]['titulos']}',
+                    ),
+                    trailing: Icon(
+                      Icons.emoji_events,
+                      color: Colors.amber,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
