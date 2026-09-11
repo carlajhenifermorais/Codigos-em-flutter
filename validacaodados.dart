@@ -86,7 +86,30 @@ class _CadastroUsuariosState extends State<CadastroUsuarios> {
         ),
       );
     }
+    
+    int? idade = int.tryParse(idadeController.text);
+    
+    if(idade == null){
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Digite uma idade válida',
+          ),
+        ),
+      );
+    }
 
+    if(idade < 1 || idade > 120){
+      
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+          'Idade inválida',
+          ),
+        ),
+      );
+      return;
+    }
     setState(() {
       usuarios.add({
         'nome': nomeController.text,
